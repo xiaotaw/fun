@@ -1,0 +1,20 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.douban.com/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+flask = "*"
+flask-sqlalchemy = "*"
+flask-migrate = "*"
+flask-script = "*"
+flask-bootstrap = "*"
+flask-wtf = "*"
+python-envcfg = "*"
+mysql-python = "*"
+ipython = "==5.8.0"
+
+[requires]
+python_version = "2.7"

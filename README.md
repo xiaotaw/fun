@@ -12,3 +12,19 @@
 3. 另开一个终端，启动测试`python2 engine_demo_test.py`，脚本向demo_socket发送"test message"。
 4. 服务端收到"test message"后，转成大写"TEST MESSAGE"，发送回客户端。
 
+
+### UGATIT's selfie2anime
+1. pre-trained model
+
+
+
+2. dataset collection:  
+
+source|links|status
+-|-|-
+[official release](https://github.com/taki0112/UGATIT)|https://drive.google.com/file/d/1xOWj1UVgp6NKMT3HbPhBbtq2A4EDkghF/view?usp=sharing| tobe download
+[selfie](https://www.crcv.ucf.edu/data/Selfie/)|https://www.crcv.ucf.edu/data/Selfie/Selfie-dataset.tar.gz | downloading
+[Anime Face](https://github.com/Mckinsey666/Anime-Face-Dataset)|https://drive.google.com/file/d/1HG7YnakUkjaxtNMclbl2t5sJwGLcHYsI/view?usp=sharing| tobe download
+[This Waifu Does Not Exist](https://www.gwern.net/TWDNE#downloads) | https://mega.nz/#!aPRFDKaC!FDpQi_FEPK443JoRBEOEDOmlLmJSblKFlqZ1A1XPt2Y， | tobe download
+<blank> |https://mega.nz/#!3qJ0DKKI!uYCz7QpD0NdvBJQ_QdjC6M9L2_UuCHDmF9lAqeSkK2E，| tobe download
+<blank> |https://www.gwern.net/docs/ai/2019-02-28-thiswaifudoesnotexist-textsnippets.tar.xz  | tobe download

@@ -7,7 +7,7 @@
 cp .env.example .env
 
 # 安装pipenv
-sudo apt install pipenv
+sudo pip install pipenv
 
 # 设置PIPENV_VENV_IN_PROJECT, 以便将 .venv 安装到当前目录
 export PIPENV_VENV_IN_PROJECT=$PWD

@@ -1,0 +1,41 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+Fun 🎉🎉🎉
+{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header"><a class="navbar-brand" href="">Fun 🎉</a></div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      <ul class="nav navbar-nav">
+        <li><a href="">头像转换</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <form class="navbar-form navbar-left">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="....">
+          </div>
+          <button type="submit" class="btn btn-default">搜索</button>
+        </form>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  {% for msg in get_flashed_messages() %}
+  <div class="alert alert-warning" role="alert">{{ msg }}</div>
+  {% endfor %}
+
+  {% block main %}
+  {% endblock %}
+</div>
+{% endblock %}

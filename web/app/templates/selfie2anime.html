@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="row">
+  <div class="col-md-6">
+
+    <form method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+
+        {% if converted %}
+        <img src="{{ url_for('static', filename=original_img_path) }}" class="img-responsive" id="origin-img">
+        {% else %}
+        <img src="" class="img-responsive" id="origin-img">
+        {% endif %}
+
+        <label for="image">你的自拍照</label>
+        <input type="file" accept="image/*" id="image" name="image" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-success">开始转换</button>
+    </form>
+
+  </div>
+  <div class="col-md-6">
+    {% if converted %}
+    <img src="{{ url_for('static', filename=converted_img_path) }}" class="img-responsive">
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script type="text/javascript">
+    $("#image").change(function(){
+        $("#origin-img").attr('src', URL.createObjectURL($(this)[0].files[0]));
+    });
+</script>
+{% endblock %}

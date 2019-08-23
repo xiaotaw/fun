@@ -9,8 +9,12 @@ cp .env.example .env
 # 安装pipenv
 sudo pip install pipenv
 
+
 # 设置PIPENV_VENV_IN_PROJECT, 以便将 .venv 安装到当前目录
 export PIPENV_VENV_IN_PROJECT=$PWD
+
+# 安装依赖
+sudo apt-get install libmysqlclient-dev
 
 # 安装依赖包
 pipenv install

@@ -1,5 +1,5 @@
 ## selfie2anime
-基于[taki0112/UGATIT](https://github.com/taki0112/UGATIT/tree/e8efff198e252df0f3a5c936f02e7e7669264b13)
+基于[taki0112/UGATIT](https://github.com/taki0112/UGATIT/tree/e8efff198e252df0f3a5c936f02e7e7669264b13)创建本地服务
 
 #### 依赖
 
@@ -7,7 +7,11 @@ python=2.7, tensorflow=1.8(1.8和1.14版本都可以), opencv3
 
 * opencv3的简易安装：`conda install -c menpo opencv3`
 
-### 演示
+#### 通信
+
+json格式的post请求，json示例：json={"test_A_files": "path_to_selfie_image"}
+
+#### 演示
 1. 下载checkpoint到UGATIT目录下（注：压缩包4.7G，解压后7.5G） 
 ```
 |--- UGATIT  

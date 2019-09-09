@@ -1,6 +1,10 @@
 # encoding: utf-8
 
+
 import hashlib
+import json
+import os
+import requests
 from werkzeug.utils import secure_filename
 from flask import Blueprint, render_template, request, flash, current_app, abort
 
@@ -44,5 +48,15 @@ def index():
     converted = True
     # todo: 移除图片前面的 /static/
     original_img_path = save_image(image)[8:]
-    converted_img_path = original_img_path
+
+    app_dir = current_app.config['APP_DIR']
+    # 如果在容器中跑，则不需要转换
+    local_img_path = '/home/xt/Documents/' + app_dir +  "/static/" + original_img_path
+
+    r = requests.post("http://127.0.0.1:6201/", json={"test_A_files": local_img_path})
+
+    converted_img_full_path = json.loads(r.text)['fake_B_files']
+    converted_img_path = converted_img_full_path.split("/static/")[-1]
+
+    #converted_img_path = original_img_path
     return render_template('selfie2anime.html', **locals())

@@ -55,7 +55,7 @@ def parse_args():
     parser.add_argument('--a2b_host', type=str, default='0.0.0.0',
                         help='selfie2anime engine listen host')
 
-    parser.add_argument('--a2b_port', type=int, default='6301',
+    parser.add_argument('--a2b_port', type=int, default='6201',
                         help='selfie2anime engine listen port')
 
     return check_args(parser.parse_args())
@@ -102,7 +102,10 @@ class RequestHandler(BaseHTTPRequestHandler):
                 print(sample_file)
                 sample_image = np.asarray(load_test_data(sample_file, size=gan.img_size))
                 fake_img = sess.run(gan.test_fake_B, feed_dict = {gan.test_domain_A : sample_image})
-                image_path = os.path.join(gan.result_dir, os.path.basename(sample_file))
+                
+                path, ext = os.path.splitext(sample_file)
+                image_path = path + "-converted" + ext
+                #image_path = os.path.join(gan.result_dir, os.path.basename(sample_file))
                 save_images(fake_img, [1, 1], image_path)
             else:
                 pass

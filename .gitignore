@@ -130,3 +130,5 @@ checkpoint/
 samples/
 results/
 
+# ori and converted images for selfie2anime
+web/app/static/selfie2anime/images/

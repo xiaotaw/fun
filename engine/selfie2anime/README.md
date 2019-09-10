@@ -5,7 +5,9 @@
 
 python=2.7, tensorflow=1.8(1.8和1.14版本都可以), opencv3
 
-* opencv3的简易安装：`conda install -c menpo opencv3`
+* opencv3的简易安装：`conda install -c menpo opencv3` or `pip install opencv-python==3.2.0.8`
+
+`apt-get install libglib2.0-dev`
 
 #### 通信
 

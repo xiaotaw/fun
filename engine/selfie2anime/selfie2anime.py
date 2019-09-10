@@ -131,7 +131,9 @@ if __name__ == "__main__":
       exit()
 
     # open session
-    with tf.Session(config=tf.ConfigProto(allow_soft_placement=True)) as sess:
+    config=tf.ConfigProto(allow_soft_placement=True)
+    config.gpu_options.allow_growth = True
+    with tf.Session(config=config) as sess:
         gan = UGATIT(sess, args)
 
         # build graph

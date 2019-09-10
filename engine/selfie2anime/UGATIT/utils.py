@@ -4,6 +4,8 @@ import cv2
 import os, random
 import numpy as np
 
+import face_recognition
+
 class ImageData:
 
     def __init__(self, load_size, channels, augment_flag):
@@ -28,6 +30,27 @@ class ImageData:
 def load_test_data(image_path, size=256):
     img = cv2.imread(image_path, flags=cv2.IMREAD_COLOR)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+    h, w, d = img.shape
+
+    # locate face, and pick the lagest face
+    face_locations = face_recognition.face_locations(img)
+    max_area = 0
+    max_area_index = -1
+    for i, face_location in enumerate(face_locations):
+        top, right, bottom, left = face_location
+        area = (bottom - top) * (right - left)
+        if area > max_area:
+            max_area = area
+            max_area_index = i
+
+    if max_area_index >= 0:
+        top = top - 50 if top - 50 >= 0 else 0
+        left = left - 50 if left - 50 >= 0 else 0
+        bottom = bottom + 51 if bottom + 51 <= h else h
+        right = right + 51 if right + 51 <= w else w
+        img = img[top:bottom, left:right]
+        print("face image size: %d x %d" % (bottom - top, right -left))
 
     img = cv2.resize(img, dsize=(size, size))
 

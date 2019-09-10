@@ -2,12 +2,26 @@
 基于[taki0112/UGATIT](https://github.com/taki0112/UGATIT/tree/e8efff198e252df0f3a5c936f02e7e7669264b13)创建本地服务
 
 #### 依赖
+```bash
+# python=2.7 和 tensorflow(r1.8 ~ r1.14)
+apt-get install python-dev python-pip
+# 需要时，指定tensorflow版本
+pip install -U pip tensorflow 
 
-python=2.7, tensorflow=1.8(1.8和1.14版本都可以), opencv3
+# opencv3
+apt-get install libglib2.0-dev
+pip install opencv-python==3.2.0.8
+# 如果用conda，可以
+conda install -c menpo opencv3
 
-* opencv3的简易安装：`conda install -c menpo opencv3` or `pip install opencv-python==3.2.0.8`
+# face_recognition
+apt-get install cmake
+pip install face_recognition
 
-`apt-get install libglib2.0-dev`
+```
+
+
+
 
 #### 通信
 

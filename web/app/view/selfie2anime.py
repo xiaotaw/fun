@@ -51,7 +51,8 @@ def index():
 
     app_dir = current_app.config['APP_DIR']
     # 如果在容器中跑，则不需要转换
-    local_img_path = '/home/xt/Documents/' + app_dir +  "/static/" + original_img_path
+    #local_img_path = '/home/xt/Documents/' + app_dir +  "/static/" + original_img_path
+    local_img_path = app_dir +  "/static/" + original_img_path
 
     r = requests.post("http://127.0.0.1:6201/", json={"test_A_files": local_img_path})
 

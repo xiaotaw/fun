@@ -7,6 +7,8 @@ python=2.7, tensorflow=1.8(1.8和1.14版本都可以), opencv3
 
 * opencv3的简易安装：`conda install -c menpo opencv3`
 
+`apt-get install libglib2.0-dev`
+
 #### 通信
 
 json格式的post请求，json示例：json={"test_A_files": "path_to_selfie_image"}
